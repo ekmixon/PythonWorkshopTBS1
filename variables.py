@@ -21,11 +21,8 @@ print(x)
 x = (0, 1, 2)
 print(x)
 
-# file
-x = open('variables.py', 'r')
-print(x)
-x.close()
-
+with open('variables.py', 'r') as x:
+    print(x)
 # Variables a, b and c have been assigned with the same value (1)
 a = b = c = 1
 print(a)

@@ -9,19 +9,12 @@ def main():
         print('\t', word)
 
     # looping through a list
-    a_list = list()
-    a_list.append('Peter')
-    a_list.append('Maria')
-    a_list.append('John')
+    a_list = ['Peter', 'Maria', 'John']
     for name in a_list:
         print('Hello', name)
 
-    # simple while loop
-    number = 0
-    while number < 10:
+    for number in range(10):
         print('Number value', number)
-        number += 1
-
     # unpack nested data
     nested_data_array = [
         ('colors', ['red', 'blue', 'orange', 'yellow']),
@@ -37,7 +30,7 @@ def main():
         'password': '1234',
         'url': 'localhost:8080'
     }
-    for key in dictionary.keys():
+    for key in dictionary:
         print(key, ':', dictionary.get(key))
 
     for value in dictionary.values():
@@ -46,8 +39,8 @@ def main():
     for key, value in dictionary.items():
         print(key, ':', value)
 
-    for entry in dictionary:
-        print(entry, ':', dictionary[entry])
+    for entry, value_ in dictionary.items():
+        print(entry, ':', value_)
 
 
     # inline loops e.g. for filters

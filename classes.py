@@ -59,7 +59,7 @@ class Training:
         :param trainer: the trainer to build the name string from
         :return: the pretty formatted name string
         """
-        return trainer.get_name() + ' ' + trainer.get_surname()
+        return f'{trainer.get_name()} {trainer.get_surname()}'
 
 
 class TrainingForTrainers(Training):
@@ -82,27 +82,35 @@ class TrainingForTrainers(Training):
         Calculates the sum of effected trainees.
         :return: the sum of effected trainees
         """
-        return sum([participant.get_amount_trainees() for participant in self._participants]) + self._trainer.get_amount_trainees()
+        return (
+            sum(
+                participant.get_amount_trainees()
+                for participant in self._participants
+            )
+            + self._trainer.get_amount_trainees()
+        )
 
     def get_information(self) -> str:
         """
         Builds the information as a pretty formatted string.
         :return: the pretty formatted string
         """
-        information = '''
+        return (
+            '''
 Topic: "%s"
 Where: %s
 Trainer: %s
 Amount of participants: %d
 Amount of effected trainees: %d
-        ''' % (
-            self.__topic,
-            self._location,
-            Training.build_name_of_trainer(self._trainer),
-            self._count_amount_of_participants(),
-            self._sum_amount_of_effected_trainees()
+        '''
+            % (
+                self.__topic,
+                self._location,
+                Training.build_name_of_trainer(self._trainer),
+                self._count_amount_of_participants(),
+                self._sum_amount_of_effected_trainees(),
+            )
         )
-        return information
 
 
 def main():

@@ -10,4 +10,4 @@ def hello_world():
 
 @app.route('/hello/<name>')
 def profile(name):
-    return 'Hello, %s!' % name
+    return f'Hello, {name}!'

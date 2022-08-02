@@ -28,9 +28,9 @@ def main():
     # If-Statement with boolean combination using keywords 'not', 'and' and 'or'
     if boolean and boolean2:
         print('Both booleans are True.')
-    elif boolean and not boolean2:
+    elif boolean:
         print('Only the first boolean is True.')
-    elif not boolean and boolean2:
+    elif boolean2:
         print('Only the second boolean is True.')
     else:
         print('Both booleans are False.')
